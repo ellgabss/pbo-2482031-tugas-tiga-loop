@@ -37,6 +37,29 @@ public class TigaLoop {
         } while (k <= n);
         System.out.println();
 
+        // Hasil jalan pertama, n = 5:
+        // Batas deret (n) : 5
+        //
+        // ===== SATU DERET, TIGA LOOP =====
+        // for      : 1 2 3 4 5
+        // while    : 1 2 3 4 5
+        // do-while : 1 2 3 4 5
+        //
+        // Hasil jalan kedua, n = 0:
+        // Batas deret (n) : 0
+        //
+        // ===== SATU DERET, TIGA LOOP =====
+        // for      :
+        // while    :
+        // do-while : 1
+        //
+        // for dan while memakai kondisi (i <= n) yang dicek SEBELUM badan loop, jadi begitu n = 0
+        // syaratnya langsung gagal dan badannya tidak pernah jalan -> baris kosong.
+        // do-while mencetak k = 1 lebih dulu, baru mengecek (k <= n) SESUDAHNYA, jadi badannya
+        // pasti jalan minimal sekali walau n = 0 -> baris ketiga berisi 1.
+        // Kesimpulan: do-while mengecek kondisinya sesudah badan loop dijalankan, jadi badannya
+        // pasti jalan minimal sekali.
+
         input.close();
     }
 }
