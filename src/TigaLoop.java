@@ -73,6 +73,27 @@ public class TigaLoop {
         System.out.println("i <  n berputar : " + kurang + " kali");
         System.out.println("i <= n berputar : " + kurangSama + " kali");
 
+        System.out.print("Disaring : ");
+        int sampaiPrintln = 0;
+        for (int i = 1; i <= 10; i++) {
+            if (i % 2 == 0) {
+                continue;
+            }
+            if (i > 7) {
+                break;
+            }
+            if (sampaiPrintln > 0) System.out.print(" ");
+            System.out.print(i);
+            sampaiPrintln++;
+        }
+        System.out.println();
+
+        // Loop tidak berhenti di i = 8 karena continue dicek lebih dulu daripada break: begitu
+        // i = 8 (genap), continue langsung dijalankan dan melompat ke i++ SEBELUM sempat mencapai
+        // baris pengecekan (i > 7). Break baru punya kesempatan dicek lagi di i = 9 (ganjil, lolos
+        // continue), dan barulah loop berhenti di sana, bukan di i = 8.
+        System.out.println("Sampai println  : " + sampaiPrintln + " kali");
+
         input.close();
     }
 }
